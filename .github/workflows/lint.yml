@@ -1,8 +1,8 @@
 name: Linting Docs using vale-action
 
 on:
-  push: [master]
-
+  push: 
+  
 jobs:
   lint-docs:
     runs-on: ubuntu-latest
