@@ -1,7 +1,7 @@
-name: Linting Docs
+name: Linting Docs using vale-action
 
 on:
-  pull_request:
+  push: [master]
 
 jobs:
   lint-docs:
