@@ -1,4 +1,4 @@
-name: Linting Docs using vale-action
+name: Linting Docs on push
 
 on:
   push: 
@@ -12,7 +12,7 @@ jobs:
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
-          reporter: github-pr-check
+          reporter: github-check
           fail_on_error: true
 
       env:
