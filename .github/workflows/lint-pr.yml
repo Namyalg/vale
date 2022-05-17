@@ -12,7 +12,7 @@ jobs:
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
-          reporter: github-pr-check
+          reporter: github-pr-check # Errors in the files through the PR are checked and reported
           fail_on_error: true
 
       env:
