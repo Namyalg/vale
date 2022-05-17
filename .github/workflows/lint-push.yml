@@ -12,7 +12,7 @@ jobs:
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
-          reporter: github-check
+          reporter: github-check # checks errors in all rst files on commit
           fail_on_error: true
 
       env:
