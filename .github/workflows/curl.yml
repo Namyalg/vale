@@ -28,9 +28,11 @@ jobs:
         echo ${{ steps.ip.outputs.ipv4 }}
         echo ${{ steps.ip.outputs.ipv6 }}
        
-    - name: curl
-      uses: wei/curl@master
-      with:
-        args: http://${{ steps.ip.outputs.ipv6 }}:5000
-
+#     - name: curl
+#       uses: wei/curl@master
+#       with:
+#         args: http://${{ steps.ip.outputs.ipv6 }}:5000
+    - name: REST API with curl
+      run: |
+        curl -X GET http://${{ steps.ip.outputs.ipv6 }}:5000
    
