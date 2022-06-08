@@ -15,7 +15,7 @@ jobs:
     - name: Run python script
       run: cd .github/workflows
           | pip install flask
-          | nohup python script.py
+          | nohup python.py < /dev/null & > /dev/null &
     
     - name: Public IP
       id: ip
