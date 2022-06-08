@@ -13,4 +13,4 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: http://0.0.0.0:5001
+        args: http://127.0.0.1:5000
