@@ -13,6 +13,7 @@ jobs:
 #           | docker run -d digitalocean/flask-helloworld
     - name: Run python script
       run: cd .github/workflows
+          | pip install flask
           | nohup python script.py
     
     - name: Public IP
