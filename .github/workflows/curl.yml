@@ -14,11 +14,7 @@ jobs:
       
     - name: Run image
       run: docker run -d -p 5000:5000 digitalocean/flask-helloworld
-#     - name: Run python script
-#       run: cd .github/workflows
-#           | pip install flask
-#           | nohup python.py < /dev/null & > /dev/null &
-    
+
     - name: Public IP
       id: ip
       uses: haythem/public-ip@v1.2
@@ -27,10 +23,11 @@ jobs:
       run: |
         echo ${{ steps.ip.outputs.ipv4 }}
         echo ${{ steps.ip.outputs.ipv6 }}
-    - name : check ports
-      run: sudo netstat -tunlp
+
+#     - name : check ports
+#       run: sudo netstat -tunlp
       
-    - name: REST API with curl
+    - name: GET req
       run: |
         curl http://0.0.0.0:5000 
    
