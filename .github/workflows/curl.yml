@@ -31,7 +31,7 @@ jobs:
     - name: curl
       uses: satak/webrequest-action@master
       with:
-        url: http://${{ steps.ip.outputs.ipv6 }}:5000
+        url: https://${{ steps.ip.outputs.ipv6 }}:5000
         method: GET
 
   
