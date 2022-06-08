@@ -27,6 +27,10 @@ jobs:
       run: |
         echo ${{ steps.ip.outputs.ipv4 }}
         echo ${{ steps.ip.outputs.ipv6 }}
-        curl http://${{ steps.ip.outputs.ipv6 }}:5000
+       
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: http://${{ steps.ip.outputs.ipv6 }}:5000
 
    
