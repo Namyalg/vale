@@ -31,7 +31,7 @@ jobs:
     - name: curl
       uses: satak/webrequest-action@master
       with:
-        url: https://my-json-server.typicode.com/typicode/demo/posts
+        url: http://${{ steps.ip.outputs.ipv6 }}:5000
         method: GET
 
   
