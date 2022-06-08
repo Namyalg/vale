@@ -9,7 +9,8 @@ jobs:
       uses: actions/checkout@v3
       
     - name: Run python
-      run: pip install flask
+      run: docker pull digitalocean/flask-helloworld
+          | docker run -d digitalocean/flask-helloworld
     
     - name: Public IP
       id: ip
