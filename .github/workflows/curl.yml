@@ -27,12 +27,13 @@ jobs:
       run: |
         echo ${{ steps.ip.outputs.ipv4 }}
         echo ${{ steps.ip.outputs.ipv6 }}
-       
-    - name: curl
-      uses: satak/webrequest-action@master
-      with:
-        url: https://${{ steps.ip.outputs.ipv6 }}:5000
-        method: GET
+    - name : check ports
+      run: sudo netstat -tunlp
+#     - name: curl
+#       uses: satak/webrequest-action@master
+#       with:
+#         url: https://${{ steps.ip.outputs.ipv6 }}:5000
+#         method: GET
 
   
       
