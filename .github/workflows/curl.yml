@@ -8,7 +8,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       
-    - name: Run python
+    - name: Run hello world flask
       run: docker pull digitalocean/flask-helloworld
           | docker run -d digitalocean/flask-helloworld
     
@@ -20,10 +20,6 @@ jobs:
       run: |
         echo ${{ steps.ip.outputs.ipv4 }}
         echo ${{ steps.ip.outputs.ipv6 }}
-    
-    - name: Run script
-      run: cd .github/workflows
-          | python script.py
     
     - name: Test cURL
       uses: wei/curl@v1
