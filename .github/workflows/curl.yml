@@ -22,6 +22,11 @@ jobs:
     
     - name: Run script
       run: cd .github/workflows
-          | pwd
+          | python script.py
+    
+    - name: Test cURL
+      uses: wei/curl@v1
+      with:
+        args: http://${{ steps.ip.outputs.ipv6 }}:5000
           
    
