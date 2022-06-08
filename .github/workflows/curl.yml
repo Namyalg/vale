@@ -1,11 +1,15 @@
 name: Test cURL
 on: 
-  workflow_dispatch:
+  push:
 jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
+    - name: Run python
+      run: pip install flask
+          | python script.py
+          
     - name: curl
       uses: wei/curl@master
       with:
-        args: https://reqbin.com/echo/get/json
+        args: http://0.0.0.0/5001
