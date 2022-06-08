@@ -29,15 +29,8 @@ jobs:
         echo ${{ steps.ip.outputs.ipv6 }}
     - name : check ports
       run: sudo netstat -tunlp
-#     - name: curl
-#       uses: satak/webrequest-action@master
-#       with:
-#         url: https://${{ steps.ip.outputs.ipv6 }}:5000
-#         method: GET
-
-  
       
     - name: REST API with curl
       run: |
-        curl -X GET http://${{ steps.ip.outputs.ipv6 }}:5000
+        curl http://0.0.0.0:5000 
    
