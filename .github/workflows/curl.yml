@@ -7,10 +7,20 @@ jobs:
     steps:
     - name: Run python
       run: pip install flask
+    
+    - name: Public IP
+      id: ip
+      uses: haythem/public-ip@v1.2
+
+    - name: Print Public IP
+      run: |
+        echo ${{ steps.ip.outputs.ipv4 }}
+        echo ${{ steps.ip.outputs.ipv6 }}
+    
     - name: Run script
-      run: pwd
+      run: python script.py
           
     - name: curl
       uses: wei/curl@master
       with:
-        args: http://127.0.0.1:5000
+        args: ${{ steps.ip.outputs.ipv6 }}:5000
