@@ -28,11 +28,15 @@ jobs:
         echo ${{ steps.ip.outputs.ipv4 }}
         echo ${{ steps.ip.outputs.ipv6 }}
        
-#     - name: curl
-#       uses: wei/curl@master
-#       with:
-#         args: http://${{ steps.ip.outputs.ipv6 }}:5000
-    - name: REST API with curl
-      run: |
-        curl -X GET http://${{ steps.ip.outputs.ipv6 }}:5000
+    - name: curl
+      uses: satak/webrequest-action@master
+      with:
+        url: https://my-json-server.typicode.com/typicode/demo/posts
+        method: GET
+
+  
+      
+#     - name: REST API with curl
+#       run: |
+#         curl -X GET http://${{ steps.ip.outputs.ipv6 }}:5000
    
