@@ -7,7 +7,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-      
+    - name: Install flask
+      run: pip install flask
 #     - name: Run hello world flask
 #       run: docker pull digitalocean/flask-helloworld
 #           | docker run -d digitalocean/flask-helloworld
