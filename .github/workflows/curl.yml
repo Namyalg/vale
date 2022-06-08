@@ -8,9 +8,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       
-    - name: Run hello world flask
-      run: docker pull digitalocean/flask-helloworld
-          | docker run -d digitalocean/flask-helloworld
+#     - name: Run hello world flask
+#       run: docker pull digitalocean/flask-helloworld
+#           | docker run -d digitalocean/flask-helloworld
+    - name: Run python script
+      run: cd .github/workflows
+          | nohup python script.py
     
     - name: Public IP
       id: ip
