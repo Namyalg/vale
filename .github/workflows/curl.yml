@@ -18,7 +18,8 @@ jobs:
         echo ${{ steps.ip.outputs.ipv6 }}
     
     - name: Run script
-      run: python script.py
+      run: pwd
+          | python script.py
           
     - name: curl
       uses: wei/curl@master
