@@ -1,0 +1,11 @@
+name: Test cURL
+on: 
+  workflow_dispatch:
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: https://httpbin.org/get
