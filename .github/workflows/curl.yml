@@ -1,6 +1,6 @@
 name: Test cURL
 on: 
-  push:
+  workflow_dispatch:
 jobs:
   curl:
     runs-on: ubuntu-latest
